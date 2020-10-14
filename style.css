@@ -8,6 +8,31 @@ body{
     justify-content: flex-end;
     background: linear-gradient(rgb(255, 241, 241),rgb(255, 241, 241))
 }
+
+.searchbar{
+    display: flex;
+    flex-direction: column;
+}
+
+.cities{
+    position: absolute;
+    max-height: 30vh;
+    width: 18vh;
+    overflow: hidden;
+    background: gray;
+    padding: 3px;
+    border-radius: 10px;
+    z-index: 20;
+}
+
+.city_name{
+    padding: .5vh;
+    font-size: 2vh;
+}
+.city_name:hover{
+    background: rgba(223, 0, 0, 0.397);
+}
+
 .temperature{
     position: relative;
     right:30%;

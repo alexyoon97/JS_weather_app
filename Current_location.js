@@ -1,6 +1,7 @@
 window.addEventListener("load", () => {
   let long;
   let lat;
+
   let temp_timezone = document.querySelector(".location-timezone")
   let temp_degree = document.querySelector(".temp-degree");
   let temp_description = document.querySelector(".temp-description");
@@ -9,7 +10,6 @@ window.addEventListener("load", () => {
   let temp_wind = document.querySelector(".extra-wind");
   let temp_humidity = document.querySelector(".extra-humidity");
   let temp_cloud = document.querySelector(".extra-cloud");
-
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -36,4 +36,6 @@ window.addEventListener("load", () => {
         });
     });
   }
+
+  
 });
