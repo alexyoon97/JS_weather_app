@@ -24,22 +24,25 @@ fetch("./cities.json")
         const ul = document.createElement("ul");
         ul.classList.add("cities");
 
-        for (let index = 0; index < filtered_cities.length; index++) {
+        if (filtered_cities.length == 0) {
           const li = document.createElement("li");
           li.classList.add("city_name");
-          li.innerText = filtered_cities[index].city;
-          li.value = `${filtered_cities[index].latitude} , ${filtered_cities[index].longtitude}`
+          li.innerText = "no results";
           ul.appendChild(li);
+        } else {
+          for (let index = 0; index < filtered_cities.length; index++) {
+            const li = document.createElement("li");
+            li.classList.add("city_name");
+            li.innerText = filtered_cities[index].city;
+            li.id = `${filtered_cities[index].latitude}, ${filtered_cities[index].longitude}`;
+            ul.appendChild(li);
+          }
         }
+
         results.appendChild(ul);
       }
     })
   );
 
-let listItems = document.querySelectorAll('#results');
+let listItems = document.querySelectorAll(".cities");
 
-listItems.forEach((item, index) => {
-    item.addEventListener('click', (event) => {
-        console.log(event.currentTarget.innerText, index)
-    })
-})

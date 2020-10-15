@@ -5,8 +5,12 @@
 body{
     height: 100vh;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     background: linear-gradient(rgb(255, 241, 241),rgb(255, 241, 241))
+}
+.rec-outfits_text{
+    font-size: 4vh;
+    padding: 0;
 }
 
 .searchbar{
@@ -34,8 +38,6 @@ body{
 }
 
 .temperature{
-    position: relative;
-    right:30%;
     display: flex;
     padding: 0px 50px;
     margin: 50px 0px;
@@ -54,13 +56,15 @@ body{
     align-items: center;
 }
 .location-section input{
-    margin-left: 20px;
     height: 20px;
     width: 40;
     border-radius: 10px;
     border-color: rgba(0, 0, 0, 0.356);
     outline: none;
     font-size: 16px;
+}
+.location-timezone{
+    padding:10px;
 }
 #temp-icon{
     position: relative;
