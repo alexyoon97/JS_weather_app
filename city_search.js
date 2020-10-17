@@ -8,6 +8,7 @@ fetch("./cities.json")
   .then((res) => res.json())
   .then((data) =>
     search_input.addEventListener("input", (e) => {
+      results.hidden = false;
       results.innerHTML = "";
       search_term = e.target.value;
 
@@ -38,11 +39,16 @@ fetch("./cities.json")
             ul.appendChild(li);
           }
         }
-
         results.appendChild(ul);
       }
     })
   );
 
-let listItems = document.querySelectorAll(".cities");
+results.addEventListener('click', function(e){
+  search_input.value = e.target.innerHTML;
+  search_input.name = e.target.id
+  console.log(e.target.innerHTML)
+  results.hidden = true;
 
+  Selected_City();
+})
