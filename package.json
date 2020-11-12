@@ -1,0 +1,27 @@
+{
+  "name": "js_weather_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Current_location.js",
+  "dependencies": {
+    "csv-parser": "^2.3.3",
+    "express": "^4.17.1",
+    "jso": "^4.1.1",
+    "oauth": "^0.9.15",
+    "the-noun-project": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexyoon97/JS_weather_app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexyoon97/JS_weather_app/issues"
+  },
+  "homepage": "https://github.com/alexyoon97/JS_weather_app#readme"
+}

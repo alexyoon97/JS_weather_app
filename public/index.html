@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>How's Weather?</title>
+</head>
+<body>
+    <div class="rec-outfits_text">
+        <h1 style="font-size: 12vh;">Today's</h1><br>
+        <h2>recommended outfits</h2><br>
+        <h4 style="font-size: 17vh;">are </h4><br><br>
+        <h id="rec_outfit_id" style="font-size: 4vh;"></h>
+    </div>
+    <div class="temperature">
+        <div class="location-section">
+            <h1 class="location-timezone">location</h1>
+            <div class="searchbar">
+                <input type="text" id="location-search">
+                <div id="results"></div>
+            </div>
+            
+        </div>
+        <div class="temp-section">
+            <img src="" id="temp-icon"></img>
+            <h2 class="temp-degree">Temperature</h2>
+            <div class="temp-description">Hot</div>
+        </div>
+        <div class="extra-datas">
+            <div class="extra-name">
+                Feels like
+                <div class="extra-feelslike"></div>
+            </div>
+            <div class="extra-name">
+                Wind
+                <div class="extra-wind"></div>
+            </div>
+            <div class="extra-name">
+                Humidity
+                <div class="extra-humidity"></div>
+            </div>
+            <div class="extra-name">
+                Cloud level
+                <div class="extra-cloud"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="recommended-outfits">
+        <div class="outfits-top"> 
+        </div>
+        <div class="outfits-bottom">
+        </div>
+    </div>
+    
+    <script src="Current_location.js"></script>
+    <script src="city_search.js"></script>
+    <script src="Rec_outfits.js"></script>
+
+</body>
+</html>
