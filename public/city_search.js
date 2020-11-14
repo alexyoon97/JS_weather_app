@@ -1,6 +1,4 @@
 var cities;
-const results = document.getElementById("results");
-const search_input = document.getElementById("location-search");
 let search_term = "";
 var filtered_cities;
 
