@@ -41,23 +41,33 @@ function FindOutfit_API_call() {
       outfit_list += " and ";
     }
   }
-
+  document.querySelector(".recommended-outfits").innerHTML = "";
   document.getElementById("rec_outfit_id").textContent = outfit_list;
   console.log(temp_degree_value, data);
-  const div = document.createElement('div');
+  const div_top = document.createElement('div');
+  const div_bot = document.createElement('div');
+
   fetch("/api", options)
     .then((response) => {
       return response.json();
     })
     .then((json) => {
       console.log(json);
-      div.innerHTML = "";
-      for (let index = 0; index < json.icon_img.length; index++) {
+      div_top.classList.add("outfits-top");
+      div_bot.classList.add("outfits-bot");
+
+      for (let index = 0; index < json.top_icon_img.length; index++) {
           const img = document.createElement("img");
-          img.src = json.icon_img[index];
-          div.appendChild(img);
+          img.src = json.top_icon_img[index];
+          div_top.appendChild(img);
       }
-      document.querySelector(".outfits-top").appendChild(div);
+      for (let index = 0; index < json.bot_icon_img.length; index++) {
+        const img = document.createElement("img");
+        img.src = json.bot_icon_img[index];
+        div_bot.appendChild(img);
+    }
+      document.querySelector(".recommended-outfits").appendChild(div_top);
+      document.querySelector(".recommended-outfits").appendChild(div_bot);
 
     });
 }

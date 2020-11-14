@@ -50,7 +50,7 @@ function Selected_City() {
   LatLong = document.getElementById("location-search").name;
 
   const proxy = "https://cors-anywhere.herokuapp.com/";
-  const api = `${proxy}http://api.weatherapi.com/v1/current.json?key=733dc5cf67f74925b4320851200710&q=${LatLong}`;
+  const api = `http://api.weatherapi.com/v1/current.json?key=733dc5cf67f74925b4320851200710&q=${LatLong}`;
 
   fetch(api)
     .then((response) => {
