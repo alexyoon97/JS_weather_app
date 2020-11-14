@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
 }
+.curr-location_img{
+    background: transparent;
+    height: 4vh;
+    width: 3vh;
+}
 body{
     height: 100vh;
     display: flex;

@@ -14,7 +14,8 @@
         <h id="rec_outfit_id" style="font-size: 4vh;"></h>
     </div>
     <div class="temperature">
-        <div class="location-section">
+        <div class="location-section" onerror="this">
+            <img class="curr-location_img" src="../img/curr-location_img.png" onclick="Current_City()"></img>
             <h1 class="location-timezone">location</h1>
             <div class="searchbar">
                 <input type="text" id="location-search">

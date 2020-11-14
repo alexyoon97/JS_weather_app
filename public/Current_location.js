@@ -44,6 +44,7 @@ function Current_City() {
         
     });
   }
+  search_input.value = "";
 }
 
 function Selected_City() {
@@ -71,4 +72,10 @@ function Selected_City() {
 
       FindOutfit_API_call();
     });
+}
+
+function imgError(image) {
+  image.onerror = "";
+  image.src = "/images/noimage.gif";
+  return true;
 }
