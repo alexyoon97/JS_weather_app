@@ -11,14 +11,13 @@ var top_icon_img_urls = [];
 var bot_icon_img_urls = [];
 
 var NounProject = require('the-noun-project'),
-    nounProject = new NounProject({
+nounProject = new NounProject({
     key: 'd37f53a4717646c290b616d1499e7988',
     secret: '56779a466caf4070b58998afc64df940'
 });
-
-app.use('/api',FindIcons);
-
+app.use('/api', FindIcons)
 app.post('/api', (request,response) => {
+    console.log(top_icon_img_urls);
     response.json({
         status: 'success',
         top_icon_img: top_icon_img_urls,
@@ -57,15 +56,3 @@ function FindIcons(response,request,next){
     console.log(bot_icon_img_urls);
     next();
 }
-// function fetchURL(outfit_type){
-//     var url;
-//     nounProject.getIconsByTerm(outfit_type, function (err, data) {
-//         if (!err) {
-//             url = data.icons[0].attribution_preview_url;
-//             return url;
-//         }
-//         else{
-//             console.log(err);
-//         }
-//      });
-// }

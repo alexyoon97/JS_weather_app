@@ -1,6 +1,6 @@
-var cities;
+let cities;
 let search_term = "";
-var filtered_cities;
+let filtered_cities;
 
 fetch("./cities.json")
   .then((res) => res.json())
@@ -10,7 +10,7 @@ fetch("./cities.json")
       results.innerHTML = "";
       search_term = e.target.value;
 
-      if (search_term == "") {
+      if (search_term === "") {
         results.innerHTML = "";
       } else {
         filtered_cities = data.filter((city_list) => {
@@ -23,7 +23,7 @@ fetch("./cities.json")
         const ul = document.createElement("ul");
         ul.classList.add("cities");
 
-        if (filtered_cities.length == 0) {
+        if (filtered_cities.length === 0) {
           const li = document.createElement("li");
           li.classList.add("city_name");
           li.innerText = "no results";

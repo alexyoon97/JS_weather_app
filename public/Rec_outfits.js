@@ -1,18 +1,18 @@
-var bot_temp_30 = ["Short Pants"];
-var bot_temp_20 = ["Jeans", "Short", "Pants"];
-var bot_temp_10 = ["Jeans", "Pants"];
-var bot_temp_0 = ["Jeans", "Pants"];
-var bot_temp_neg = ["Jeans", "Pants", "Heattech"];
+const bot_temp_30 = ["Short Pants"];
+const bot_temp_20 = ["Jeans", "Short", "Pants"];
+const bot_temp_10 = ["Jeans", "Pants"];
+const bot_temp_0 = ["Jeans", "Pants"];
+const bot_temp_neg = ["Jeans", "Pants", "Heattech"];
 
-var top_temp_30 = ["Tank Top"];
-var top_temp_20 = ["T-Shirts", "Cardigan"];
-var top_temp_10 = ["Hoodie", "Sweater", "Knit Sweater"];
-var top_temp_0 = ["Coat", "Jacket", "Trench Coat", "Leather Jacket"];
-var top_temp_neg = ["Padded Jacket", "Thick Coat"];
+const top_temp_30 = ["Tank Top"];
+const top_temp_20 = ["T-Shirts", "Cardigan"];
+const top_temp_10 = ["Hoodie", "Sweater", "Knit Sweater"];
+const top_temp_0 = ["Coat", "Jacket", "Trench Coat", "Leather Jacket"];
+const top_temp_neg = ["Padded Jacket", "Thick Coat"];
 
 function FindOutfit_API_call() {
   let data = {};
-  var outfit_list = "";
+  let outfit_list = "";
 
   if (parseInt(temp_degree.textContent) < 0) {
     data = { top_temp_neg, bot_temp_neg };
@@ -28,16 +28,16 @@ function FindOutfit_API_call() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(data),
+    body: JSON.stringify(data)
   };
 
-  var count = 0;
+  let count = 0;
   for (var i in data) {
     count++;
     for (var j in data[i]) {
       outfit_list += `${data[i][j]} `;
     }
-    if (count != 2) {
+    if (count !== 2) {
       outfit_list += " and ";
     }
   }
