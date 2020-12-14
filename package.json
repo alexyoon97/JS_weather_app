@@ -9,6 +9,7 @@
     "heroku": "^7.47.2",
     "jso": "^4.1.1",
     "oauth": "^0.9.15",
+    "request": "^2.88.2",
     "the-noun-project": "^2.1.0"
   },
   "devDependencies": {},

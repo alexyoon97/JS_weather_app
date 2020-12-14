@@ -11,6 +11,7 @@ const top_temp_0 = ["Coat", "Jacket", "Trench Coat", "Leather Jacket"];
 const top_temp_neg = ["Padded Jacket", "Thick Coat"];
 
 function FindOutfit_API_call() {
+  //initiallization
   let data = {};
   let outfit_list = "";
 
@@ -31,6 +32,7 @@ function FindOutfit_API_call() {
     body: JSON.stringify(data)
   };
 
+  //displaying outfits in a word line 35 to 49
   let count = 0;
   for (var i in data) {
     count++;
@@ -47,11 +49,13 @@ function FindOutfit_API_call() {
   const div_top = document.createElement('div');
   const div_bot = document.createElement('div');
 
+  //request icon rul
   fetch("/api", options)
     .then((response) => {
       return response.json();
     })
     .then((json) => {
+      //dislay icons
       console.log(json);
       div_top.classList.add("outfits-top");
       div_bot.classList.add("outfits-bot");

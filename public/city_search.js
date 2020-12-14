@@ -6,13 +6,16 @@ fetch("./cities.json")
   .then((res) => res.json())
   .then((data) =>
     search_input.addEventListener("input", (e) => {
+      //initiallization
       results.hidden = false;
       results.innerHTML = "";
       search_term = e.target.value;
 
+      //boundary check
       if (search_term === "") {
         results.innerHTML = "";
       } else {
+        //filtering
         filtered_cities = data.filter((city_list) => {
           return city_list.city
             .toLowerCase()
@@ -23,6 +26,7 @@ fetch("./cities.json")
         const ul = document.createElement("ul");
         ul.classList.add("cities");
 
+        //display cities
         if (filtered_cities.length === 0) {
           const li = document.createElement("li");
           li.classList.add("city_name");
@@ -33,6 +37,7 @@ fetch("./cities.json")
             const li = document.createElement("li");
             li.classList.add("city_name");
             li.innerText = filtered_cities[index].city;
+            //set id as long and lat to find the location data easy
             li.id = `${filtered_cities[index].latitude}, ${filtered_cities[index].longitude}`;
             ul.appendChild(li);
           }
@@ -41,7 +46,7 @@ fetch("./cities.json")
       }
     })
   );
-
+//display weather information
 results.addEventListener('click', function(e){
   search_input.value = e.target.innerHTML;
   search_input.name = e.target.id

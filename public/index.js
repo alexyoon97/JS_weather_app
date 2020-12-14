@@ -12,6 +12,7 @@ var LatLong;
 const results = document.getElementById("results");
 const search_input = document.getElementById("location-search");
 
+//excute when application loads
 window.addEventListener("load", () => {
     Current_City();
   });

@@ -1,4 +1,5 @@
 function Current_City() {
+  //boundary check
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       LatLong = `${position.coords.latitude}, ${position.coords.longitude}`;
@@ -6,11 +7,13 @@ function Current_City() {
       const proxy = "https://cors-anywhere.herokuapp.com/";
       const api = `http://api.weatherapi.com/v1/current.json?key=733dc5cf67f74925b4320851200710&q=${LatLong}`;
 
+      //request weather information
       fetch(api)
         .then((response) => {
           return response.json();
         })
         .then((data) => {
+          //display weather information
           console.log(data);
           temp_degree_value = data.current.temp_c;
           temp_timezone.textContent = `${data.location.name}, ${data.location.country}`;
@@ -37,11 +40,13 @@ function Selected_City() {
   const proxy = "https://cors-anywhere.herokuapp.com/";
   const api = `http://api.weatherapi.com/v1/current.json?key=733dc5cf67f74925b4320851200710&q=${LatLong}`;
 
+  //request weather information
   fetch(api)
     .then((response) => {
       return response.json();
     })
     .then((data) => {
+      //display weather information
       console.log(data);
       
       temp_degree_value = data.current.temp_c;
