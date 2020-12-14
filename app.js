@@ -1,6 +1,5 @@
 //declaration and initiallization
 const express = require('express')
-const request_api = require('request')
 const app = express();
 const port = process.env.PORT || 3000
 
@@ -35,6 +34,13 @@ app.post('/api', (request,response) => {
 })
 //find requested icons 
 function FindIcons(response,request,next){
+
+    // response:
+    // body: {
+    //     top_temp_10: [ 'Hoodie', 'Sweater', 'Knit Sweater' ],
+    //     bot_temp_10: [ 'Jeans', 'Pants' ]
+    //   }
+    
     for(var i in response.body){
         for(var j in response.body[i]){
             if(i.toString().includes("bot",0)){
